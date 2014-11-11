@@ -5,15 +5,21 @@ import java.util.BitSet;
 public class Allocate {
 
 	private BitSet allocationSet;
+
 	
 	public Allocate() {
-		allocationSet = new BitSet();
-		//Checkpoint.restore(file)
-		
+		try {
+			allocationSet = (BitSet) Checkpoint.restore("checkpoint.txt"); // requires restore to return an Object 
+		} 
+		catch (Exception ex) {
+			allocationSet = new BitSet();
+		}
+			
 	}
 	
-	// Changed method name to be different from class/constructor name
+	// Returns a new area of the file in which to store an object
 	public int allocateArea() {
+		 
 		int areaNumber;
 		if (allocationSet.isEmpty()) {
 			areaNumber = 0;
@@ -23,16 +29,16 @@ public class Allocate {
 		
 		allocationSet.set(areaNumber);
 		
-		//Checkpoint.save(file)		
+		Checkpoint.save(allocationSet);	
 		return areaNumber;
 	}
-	
-	// Changed to match previous method
+
+	// Marks an area of the database as free
+	// Takes as a parameter an area of the file to be freed
 	public void freeArea(int areaNumber) {
 		//To throw an exception if no areas are allocated or no?
 		allocationSet.clear(areaNumber);
-		
-		//Checkpoint.save(file)
+		Checkpoint.save(allocationSet);
 	}
 	
 	public int size() {
