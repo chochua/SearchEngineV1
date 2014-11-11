@@ -9,7 +9,8 @@
 * Decide who will refactor the Field class
 
 ### 11/10 - 11/15
-- [ ] Decide how we will refactor Field class
+- [ ] Chong Meng: Refactor Field Class
+- [ ] Jake: Debug Disk Space
 - Tests for each class
   - [ ] Nick: Allocate
   - [ ] Chong Meng: Node
