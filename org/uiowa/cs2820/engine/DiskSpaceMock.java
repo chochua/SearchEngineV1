@@ -16,4 +16,3 @@ public final class DiskSpaceMock{
 		return tempdatabase.get(location);
 	}
 }
-B
