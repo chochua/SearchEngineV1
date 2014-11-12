@@ -1,11 +1,11 @@
 package org.uiowa.cs2820.engine;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Node {
   // Node is a basic unit in the database
   byte[] Key;  // Key of this node for lookup
-  public ArrayList<String> Identifiers; // have to refractor to byteList
+  public LinkedList<String> Identifiers; 
   int size;    // for byte List
   
   int next = -1; //for Storage class
@@ -14,7 +14,7 @@ public class Node {
   
   Node(byte[] f, String id) {
 	this.Key = f;
-	this.Identifiers = new ArrayList<String>();
+	this.Identifiers = new LinkedList<String>();
 	this.Identifiers.add(id);
     }
   
@@ -29,13 +29,13 @@ public class Node {
   
 
   public int getSize() {
-	return Identifiers.size(); // should be byte, testing with ArrayList
+	return Identifiers.size(); 
     }
   
   
-  public ArrayList getIdentifiers() {
+  public LinkedList getIdentifiers() {
 	  // have to call value storage
-	  ArrayList getid = new ArrayList();
+	  LinkedList getid = new LinkedList();
 	  for (int i = 0; i < Identifiers.size(); i ++) { 
 		  getid.add(Identifiers.get(i));
 	  }
