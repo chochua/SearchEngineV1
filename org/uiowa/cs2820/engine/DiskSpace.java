@@ -1,6 +1,6 @@
 //Jake Sellers 00595842
 package org.uiowa.cs2820.engine;
-import java.io.File;
+import java.io.File.*;
 import java.io.RandomAccessFile;
 import java.io.IOException;
 public class DiskSpace {
@@ -14,16 +14,13 @@ public class DiskSpace {
 		String filepath = "diskspace.txt";
 		File file = new File(filepath);
 		
-		try {		
+	
 			// first time, file doesn't exist
-			if (file.createNewFile()) {
+			if (!file.exists()) {
+				file.createNewFile()
 				System.out.println("file created");
 			}
-		}
-		catch (Exception ex) {
-			System.out.println("Error");
-		}
-
+		
 		
 		
 		RandomAccessFile RAfile = new RandomAccessFile(file,"rw");
