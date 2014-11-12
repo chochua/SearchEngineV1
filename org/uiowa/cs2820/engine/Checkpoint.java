@@ -29,10 +29,7 @@ public class Checkpoint {
 		byte[] ba = new byte[(int) file.length()];
 		// convert object to byte array using Field.convert
 		ba = Converter.convert(obj);  
-<<<<<<< Updated upstream
-		
-=======
->>>>>>> Stashed changes
+
 		try {
 			// write to file
 			FileOutputStream fos = new FileOutputStream(file);
