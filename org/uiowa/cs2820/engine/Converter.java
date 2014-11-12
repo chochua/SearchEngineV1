@@ -10,9 +10,6 @@ import java.io.Serializable;
 
 public class Converter implements Serializable {
 	
-	public Converter() {
-		
-	}
 	
 	public static byte[] convert(Object O) {
 		  // private method converts objects into byte array
