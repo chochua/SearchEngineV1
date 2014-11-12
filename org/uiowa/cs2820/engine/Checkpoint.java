@@ -9,15 +9,30 @@ public class Checkpoint {
 	 */
 	
 	public static void save(Object obj) {
+		
 		// change if needed
 		String filepath = "checkpoint.txt";
 		// file to write to
 		File file = new File(filepath);
+		
+		try {		
+			// first time, file doesn't exist
+			if (file.createNewFile()) {
+				System.out.println("file created");
+			}
+		}
+		catch (Exception ex) {
+			System.out.println("Error");
+		}
+		
 		// byte array to write to file
 		byte[] ba = new byte[(int) file.length()];
 		// convert object to byte array using Field.convert
 		ba = Converter.convert(obj);  
+<<<<<<< Updated upstream
 		
+=======
+>>>>>>> Stashed changes
 		try {
 			// write to file
 			FileOutputStream fos = new FileOutputStream(file);
@@ -26,7 +41,7 @@ public class Checkpoint {
 		}
 		catch (Exception ex) {
 			System.out.println("Error");
-		}
+		}	
 	}
 	
 	/* restore(): 
