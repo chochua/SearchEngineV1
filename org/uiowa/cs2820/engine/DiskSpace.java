@@ -13,6 +13,19 @@ public class DiskSpace {
 		//Creates the filepath
 		String filepath = "diskspace.txt";
 		File file = new File(filepath);
+		
+		try {		
+			// first time, file doesn't exist
+			if (file.createNewFile()) {
+				System.out.println("file created");
+			}
+		}
+		catch (Exception ex) {
+			System.out.println("Error");
+		}
+
+		
+		
 		RandomAccessFile RAfile = new RandomAccessFile(file,"rw");
 		//looks for files location
 		RAfile.seek(location);
