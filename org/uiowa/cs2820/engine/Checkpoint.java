@@ -34,7 +34,7 @@ public class Checkpoint {
 	 * uses Field.revert to convert byte array back to
 	 * original Java object
 	 */
-	public static void restore(String filepath) {
+	public static Object restore(String filepath) {
 		// file to read from
 		File file = new File(filepath);
 		// byte array to convert to original object
@@ -53,6 +53,7 @@ public class Checkpoint {
 		
 		// convert byte array to original object with Field.revert
 		obj = Converter.revert(ba); 
+		return obj;
 	}
 
 }
