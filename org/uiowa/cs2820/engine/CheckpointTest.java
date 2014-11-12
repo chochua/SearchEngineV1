@@ -2,8 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.BitSet;
 
 import org.junit.Test;
 
@@ -18,9 +17,10 @@ public class CheckpointTest {
 	
 	@Test
 	public void test() {
-		ArrayList<String> x = new ArrayList<>(Arrays.asList("hello", "world"));
-		Checkpoint.save(x);
-		assertEquals(Checkpoint.restore("checkpoint.txt"),x);
+		BitSet bits = new BitSet();
+		bits.set(1000001);
+		Checkpoint.save(bits);
+		assertEquals(Checkpoint.restore("checkpoint.txt"),bits);
 	}
 
 }
