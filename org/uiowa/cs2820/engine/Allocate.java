@@ -1,5 +1,6 @@
 package org.uiowa.cs2820.engine;
 
+import java.io.IOException;
 import java.util.BitSet;
 
 public class Allocate {
@@ -9,7 +10,7 @@ public class Allocate {
 	
 	public Allocate() {
 		try {
-			allocationSet = (BitSet) Checkpoint.restore("checkpoint.txt"); // requires restore to return an Object 
+			allocationSet = (BitSet) Checkpoint.restore("checkpoint.txt");
 		} 
 		catch (Exception ex) {
 			allocationSet = new BitSet();

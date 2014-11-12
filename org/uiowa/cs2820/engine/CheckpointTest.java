@@ -2,6 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.BitSet;
 
 import org.junit.Test;
@@ -16,7 +17,7 @@ public class CheckpointTest {
 	 */
 	
 	@Test
-	public void test() {
+	public void test() throws IOException {
 		BitSet bits = new BitSet();
 		bits.set(1000001);
 		Checkpoint.save(bits);

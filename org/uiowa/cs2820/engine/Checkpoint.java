@@ -2,7 +2,7 @@ package org.uiowa.cs2820.engine;
 
 import java.io.*;
 
-public class Checkpoint {
+public class Checkpoint{
 	/*  save(): use Field.convert to convert Java object to
 	 *  byte array, write byte array to file with constant
 	 *  filename
@@ -46,22 +46,17 @@ public class Checkpoint {
 	 * uses Field.revert to convert byte array back to
 	 * original Java object
 	 */
-	public static Object restore(String filepath) {
+	public static Object restore(String filepath) throws IOException{
 		// file to read from
 		File file = new File(filepath);
 		// byte array to convert to original object
 		byte[] ba = new byte[(int) file.length()];
 		Object obj = new Object();
-		
-		try {
-			// read from file
-			FileInputStream fis = new FileInputStream(file);
-			fis.read(ba);
-		    fis.close();
-		}
-		catch (Exception ex) {
-			System.out.println("Error");
-		}
+
+		// read from file, should throw exception if file doesn't exist
+		FileInputStream fis = new FileInputStream(file);
+		fis.read(ba);
+	    fis.close();
 		
 		// convert byte array to original object with Field.revert
 		obj = Converter.revert(ba); 
