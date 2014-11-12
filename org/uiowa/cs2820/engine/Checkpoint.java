@@ -16,7 +16,7 @@ public class Checkpoint {
 		// byte array to write to file
 		byte[] ba = new byte[(int) file.length()];
 		// convert object to byte array using Field.convert
-		ba = Field.convert(obj);  
+		ba = Converter.convert(obj);  
 		
 		try {
 			// write to file
@@ -34,12 +34,12 @@ public class Checkpoint {
 	 * uses Field.revert to convert byte array back to
 	 * original Java object
 	 */
-	public static Object restore(String filepath) { // should this return obj?
+	public static void restore(String filepath) {
 		// file to read from
 		File file = new File(filepath);
 		// byte array to convert to original object
 		byte[] ba = new byte[(int) file.length()];
-		Object obj = new Object(); 
+		Object obj = new Object();
 		
 		try {
 			// read from file
@@ -52,8 +52,7 @@ public class Checkpoint {
 		}
 		
 		// convert byte array to original object with Field.revert
-		obj = Field.revert(ba); 
-		return obj;
+		obj = Converter.revert(ba); 
 	}
 
 }

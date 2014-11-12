@@ -14,6 +14,7 @@ public class Field implements Serializable {
 	private String FieldName; 
 	private Object FieldValue;
 	
+	/**
 	public static byte[] convert(Object O) {
 	  // private method converts objects into byte array
 	  ByteArrayOutputStream M = new ByteArrayOutputStream();
@@ -24,8 +25,8 @@ public class Field implements Serializable {
 	    } 
 	  catch (IOException e) {
         return null; // wrong, but should not happen	    	
-	    }
-	  return M.toByteArray();
+	    } 
+	  return M.toByteArray(); 
 	  }
 	
 	public static Object revert(byte[] seq) {
@@ -38,7 +39,7 @@ public class Field implements Serializable {
 	  catch (Exception e) { };
 		return O;
 	  }
-	
+	*/
 	// constructor for Fields with String
 	Field(String FieldName, Object Value) throws IllegalArgumentException {
 	  this.FieldName = FieldName;
@@ -54,7 +55,7 @@ public class Field implements Serializable {
 	  return FieldValue;
 	  }
 	public byte[] toBytes() {
-	  byte[] wholeField = convert(this);
+	  byte[] wholeField = Converter.convert(this);
 	  return wholeField;
 	  //byte[] ByteFieldName = FieldName.getBytes();
 	  //byte[] R = new byte[ByteFieldName.length + FieldValue.length];

@@ -20,7 +20,7 @@ public class Storage{
 			}
 		}
 		catch (IndexOutOfBoundsException e){
-			Node nullnode = new Node(Field.convert(null), "null");
+			Node nullnode = new Node(Converter.convert(null), "null");
 			nullnode.location = 0;
 			put(0, nullnode);
 		}
@@ -30,11 +30,11 @@ public class Storage{
 	
 	private Node get(int location){
 		byte[] readdata = D.read(location);
-		return (Node)Field.revert(readdata);
+		return (Node)Converter.revert(readdata);
 	}
 	
 	private void put(int location, Node node){
-		byte[] writedata = Field.convert(node);
+		byte[] writedata = Converter.convert(node);
 		D.write(location, writedata);
 	}
 	
