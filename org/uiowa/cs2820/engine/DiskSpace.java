@@ -11,7 +11,7 @@ public class DiskSpace {
 	//ArrayList<byte[]> database1 = new ArrayList<byte[]>();
 	public static void writeArea(String info, int location)
 		throws IOException{
-		//Creates the filepath
+		//Creates the file path
 		String filepath = "diskspace.txt";
 		File file = new File(filepath);
 		
