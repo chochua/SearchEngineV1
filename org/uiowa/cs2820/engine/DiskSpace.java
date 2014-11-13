@@ -1,6 +1,5 @@
 //Jake Sellers 00595842
 package org.uiowa.cs2820.engine;
-import java.io.File.*;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.IOException;

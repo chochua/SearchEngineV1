@@ -7,7 +7,8 @@ import java.io.IOException;
 import org.junit.Test;
 
 public class DiskSpaceTest {
-
+	//tests the write and read at the same time.
+	//If there is an error in either portion, an error and message is displayed.
 	@Test
 	public void Test() {
 		byte[] test = null;
@@ -20,13 +21,16 @@ public class DiskSpaceTest {
 		}
 		
 		try {
-			test = DiskSpace.readArea(0,8);
+			test = DiskSpace.readArea(0,6);
 		} catch (IOException e) {
 			System.out.println("Read Error");
 			e.printStackTrace();
 			System.out.println(e);
 		}
+		System.out.println(test);
+		System.out.println("Reached assert");
 		assertEquals(test,"abcdef");
+		
 	}
 
 
@@ -34,9 +38,5 @@ public class DiskSpaceTest {
 	
 
 
-@Test
-public void readTest() {
-	fail("Not yet implemented");
-}
 
 }
