@@ -1,6 +1,7 @@
 //Jake Sellers 00595842
 package org.uiowa.cs2820.engine;
 import java.io.File.*;
+import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.IOException;
 public class DiskSpace {
@@ -17,7 +18,7 @@ public class DiskSpace {
 	
 			// first time, file doesn't exist
 			if (!file.exists()) {
-				file.createNewFile()
+				file.createNewFile();
 				System.out.println("file created");
 			}
 		
