@@ -13,7 +13,8 @@ public class DiskSpaceTest {
 @Test
 public void Testfirst(){
 	try {
-		DiskSpace.writeArea("Testing", 50);
+		byte [] string1 = "Testing".getBytes();
+		DiskSpace.writeArea(string1, 50);
 	} catch (IOException e) {
 		System.out.println("Error Writing in Test 1");
 		e.printStackTrace();
@@ -33,7 +34,8 @@ public void Testfirst(){
 	public void Testsecond() {
 		byte[] test = null;
 		try {
-			DiskSpace.writeArea("abcdef", 0);
+			byte [] string1 = "abcdef".getBytes();
+			DiskSpace.writeArea(string1, 0);
 		} catch (IOException e) {
 			System.out.println("Write Error");
 			e.printStackTrace();

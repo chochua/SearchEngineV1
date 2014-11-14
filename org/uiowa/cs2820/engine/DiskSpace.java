@@ -27,7 +27,7 @@ public class DiskSpace {
 		//looks for files location
 		RAfile.seek(location);
 		//writes to file with data given by info
-		RAfile.write(info;
+		RAfile.write(info);
 		RAfile.close();
 
 		
