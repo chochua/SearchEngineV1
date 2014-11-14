@@ -64,7 +64,7 @@ public class Storage{
 		
 		byte[] readdata = new byte[size];
 		try {
-			readdata = DiskSpaceMock.readArea(location, size);
+			readdata = DiskSpace.readArea(location, size);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -77,7 +77,7 @@ public class Storage{
 		byte[] writedata = new byte[node.size];
 		writedata = Converter.convert(node);
 		try {
-			DiskSpaceMock.writeArea(writedata, location);
+			DiskSpace.writeArea(writedata, location);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
