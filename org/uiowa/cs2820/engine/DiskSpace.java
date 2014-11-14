@@ -8,7 +8,7 @@ public class DiskSpace {
 	//has ability to throw exceptions if needed
 	
 	//ArrayList<byte[]> database1 = new ArrayList<byte[]>();
-	public static void writeArea(String info, int location)
+	public static void writeArea(byte[] info, int location)
 		throws IOException{
 		//Creates the file path
 		String filepath = "diskspace.txt";
@@ -27,7 +27,7 @@ public class DiskSpace {
 		//looks for files location
 		RAfile.seek(location);
 		//writes to file with data given by info
-		RAfile.write(info.getBytes());
+		RAfile.write(info;
 		RAfile.close();
 
 		
