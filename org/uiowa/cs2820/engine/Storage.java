@@ -30,7 +30,6 @@ public class Storage{
 		
 		
 		byte[] ba = new byte[(int) file.length()];
-
 		FileInputStream fis;
 		try {
 			fis = new FileInputStream(file);
@@ -40,7 +39,6 @@ public class Storage{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		RAM = (ArrayList<Node>)Converter.revert(ba); 
 	}
 	
@@ -54,7 +52,6 @@ public class Storage{
 	private Node get(int location){
 		loadRAM();
 		int size = -1;
-		
 		for (Node node : RAM){
 			if (node.location == location){
 				size = node.size;
@@ -86,7 +83,6 @@ public class Storage{
 	public void add(Node node){
 		loadRAM();
 		node.location = A.allocateArea();
-		
 		if (RAM.size()>0){
 			Node oldlast = RAM.get(RAM.size()-1);
 			oldlast.next = node.location;
@@ -95,7 +91,6 @@ public class Storage{
 		}
 		put(node.location, node);
 		saveRAM();
-		
 	}
 	
 	
