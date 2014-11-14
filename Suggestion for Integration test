@@ -1,0 +1,10 @@
+Nathan 
+the integration test would simply put in some data into the system through the indexer 
+and get it back out through the field search. Just like the last projects integration test. 
+All of our new stuff is backend stuff involved with storing everything out of RAM and putting 
+it on the disk. how the system works from an external point of shouldn't be very different then 
+before, depending on how we adjust the old stuff to use our code.
+
+Meng
+try putting few element into the database(using the available method or manually), 
+then try searching one of them
