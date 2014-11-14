@@ -12,7 +12,7 @@ public class Allocate {
 		try {
 			allocationSet = (BitSet) Checkpoint.restore("checkpoint.txt");
 		} 
-		catch (Exception ex) {
+		catch (IOException ex) {
 			allocationSet = new BitSet();
 		}
 			
