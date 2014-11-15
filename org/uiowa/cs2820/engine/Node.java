@@ -1,15 +1,15 @@
 package org.uiowa.cs2820.engine;
 
 import java.util.LinkedList;
+import java.io.Serializable;
 
-public class Node {
+public class Node implements Serializable{
   // Node is a basic unit in the database
   byte[] Key;  // Key of this node for lookup
   public LinkedList<String> Identifiers; 
-  int size;    // for byte List
   
-  int next = -1; //for Storage class
   int prev = -1; //for Storage class
+  int next = -1; //for Storage class
   int location; //for Storage class
   
   Node(byte[] f, String id) {
@@ -40,6 +40,8 @@ public class Node {
 		  getid.add(Identifiers.get(i));
 	  }
 	  return getid; 
+	  
+
   }
   
   
