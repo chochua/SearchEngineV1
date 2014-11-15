@@ -1,6 +1,8 @@
                         Search Engine Project Version 1
                                   Team 3
 Members: Mary Feng, Nicholas Evans, Jacob Sellers, Chong Meng Chua, Nathan Pettorini
+
+
 ===================================================================================
 
 Allocate:
