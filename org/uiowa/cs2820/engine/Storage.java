@@ -30,8 +30,8 @@ public class Storage{
 	}
 	
 	public void add(Node node){
-		int newlocation = A.allocateArea();
-		System.out.println(DiskSpace.Size());
+				
+		int newlocation = A.allocateArea();		
 		if (DiskSpace.Size()>0){
 			
 			//adjust the previous last node in the array.
@@ -46,7 +46,7 @@ public class Storage{
 			
 			//ensure no overlapping of bytearrays in the file.
 			if (newsize>originalsize){
-				del(end.Key);
+				removekey(end.Key);
 				add(end);
 			}
 			else{
@@ -59,9 +59,26 @@ public class Storage{
 	}
 	
 	
-	public void del(byte[] key){
+	public void del(byte[] key, String id){
 		if (DiskSpace.Size()>0){
 			int i = 0;
+			//remove the node from the database, add the identifier, then re-add the node to prevent bytearray overlap.
+			while (i >= 0){
+				if (get(i).Key == key){
+					get(get(i).prev).next = get(get(i).next).location;
+					get(get(i).next).prev = get(get(i).prev).location;
+				}
+				i = get(i).next;
+			}
+			get(i).Identifiers.remove(id);
+			add(get(i));
+		}
+	}
+	
+	public void removekey(byte[] key){
+		if (DiskSpace.Size()>0){
+			int i = 0;
+			//remove the node from the database, add the identifier, then re-add the node to prevent bytearray overlap.
 			while (i >= 0){
 				if (get(i).Key == key){
 					get(get(i).prev).next = get(get(i).next).location;
