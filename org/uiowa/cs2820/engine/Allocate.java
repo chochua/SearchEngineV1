@@ -1,3 +1,5 @@
+// Author: Nick Evans
+
 package org.uiowa.cs2820.engine;
 
 import java.io.IOException;

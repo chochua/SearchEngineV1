@@ -1,3 +1,5 @@
+// Author: Nick Evans
+
 package org.uiowa.cs2820.engine;
 
 import static org.junit.Assert.*;
@@ -58,11 +60,11 @@ public class AllocateTest {
 		remove_file();
 		testAllocate = new Allocate();
 		int area = 0;
-		for (int i=0; i <= 10; i++) {
+		for (int i=0; i < 10; i++) {
 			area = testAllocate.allocateArea();
 		}
 		// Reinstantiate testAllocate to test restore()
 		testAllocate = new Allocate();
-		assertEquals(testAllocate.size(), 8);
+		assertEquals(testAllocate.size(), 10);
 	}
 }
