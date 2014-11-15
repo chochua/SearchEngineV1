@@ -1,37 +1,20 @@
 package org.uiowa.cs2820.engine;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class LinearMemoryDatabase implements Database {
-  private ArrayList<Node> Memory = null;
   
-  LinearMemoryDatabase() {
-	this.Memory = new ArrayList<Node>();  // empty list
-    }
+  Storage store = new Storage();
   
   public Node fetch(byte[] key) {
-	for (Node e: Memory)
-	  if (Arrays.equals(e.Key,key)) return e;
-	return null;
+	  return store.find(key);
     }
   
   public void store(byte[] key, String id) {
-	for (Node e: Memory) 
-	  if (Arrays.equals(e.Key,key)) {
-		e.add(id);
-		return;
-	    }
-    Node p = new Node(key,id);
-    Memory.add(p);
+	  Node addNode = new Node(key, id);
+	  store.add(addNode);
     }
   
   public void delete(byte[] key, String id) {
-	for (Node e: Memory)
-	  if (Arrays.equals(e.Key, key)) {
-		e.Identifiers.remove(id);
-		return;
-	    }
+	  store.del(key);
     }
   }
 	  
