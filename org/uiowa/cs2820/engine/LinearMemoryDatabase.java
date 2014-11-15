@@ -14,7 +14,7 @@ public class LinearMemoryDatabase implements Database {
     }
   
   public void delete(byte[] key, String id) {
-	  store.del(key);
+	  store.del(key, id);
     }
   }
 	  
