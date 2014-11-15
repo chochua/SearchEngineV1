@@ -24,6 +24,6 @@ Writes/reads from the database file.
 
 
 Known bugs:
-The node objects are not cleanly being deserialized, which makes Storage fail its unit testing. 
+The node objects are not being correctly deserialized, which makes Storage fail its unit testing. 
 If given more time, the next path to take would be to make custom readObject() and writeObject() 
 methods for the Node class as part of its implementation of Serializable. 
